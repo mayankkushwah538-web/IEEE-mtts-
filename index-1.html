@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IEEE MTT-S MITS-DU Gwalior</title>
+<meta name="description" content="IEEE Microwave Theory and Technology Society Student Branch Chapter at MITS-DU, Gwalior.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1F44; --deep:#061226; --ieee:#00629B; --cyan:#00B5E2; --sky:#E6F6FC;
+  --white:#fff; --ink:#0F2347; --muted:#5A6B85; --line:#D8E3EE;
+  --head:'Sora','Segoe UI',system-ui,sans-serif; --body:'DM Sans','Segoe UI',system-ui,sans-serif;
+  --nav-h:68px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.65;font-size:1.05rem}
+h1,h2,h3{font-family:var(--head);line-height:1.15;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+section{padding:96px 0}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 1rem var(--body);padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
+.btn-primary{background:var(--cyan);color:var(--deep)}
+.btn-primary:hover{background:#33c6ec;transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,181,226,.35)}
+.btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.45)}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+.sec-title{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--navy);margin-bottom:14px}
+.sec-sub{color:var(--muted);max-width:60ch;margin-bottom:48px}
+
+/* Navbar */
+nav{position:sticky;top:0;z-index:50;height:var(--nav-h);background:rgba(6,18,38,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,181,226,.2)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
+.brand{font:800 1.15rem var(--head);color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--ieee),var(--cyan));display:grid;place-items:center;font-style:normal;font-size:.8rem;color:var(--white)}
+.links{display:flex;gap:28px;list-style:none;align-items:center}
+.links a{color:#C9D8EA;text-decoration:none;font-weight:500;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+.links a:hover,.links a.active{color:var(--white);border-color:var(--cyan)}
+.menu{display:none;background:none;border:0;color:var(--white);font-size:1.7rem;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 20%,#0d3a73 0%,var(--navy) 45%,var(--deep) 100%);color:var(--white);min-height:calc(100vh - var(--nav-h));display:flex;align-items:center;padding:80px 0}
+#wave{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:800;max-width:14ch;margin-bottom:22px}
+.hero h1 span{color:var(--cyan)}
+.hero p{max-width:56ch;color:#C9D8EA;font-size:1.15rem;margin-bottom:34px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.tag{display:inline-block;border:1px solid rgba(0,181,226,.5);color:var(--cyan);padding:6px 14px;border-radius:99px;font-size:.88rem;margin-bottom:24px}
+
+/* About */
+#about{background:var(--sky)}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.about-grid p{margin-bottom:16px;color:#2A3C5C}
+.facts{display:grid;gap:16px}
+.fact{background:var(--white);border-left:5px solid var(--cyan);padding:20px 24px;border-radius:12px;box-shadow:0 6px 20px rgba(10,31,68,.07)}
+.fact b{font-family:var(--head);color:var(--ieee);display:block;margin-bottom:2px}
+
+/* Events */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.event{background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.event:hover{transform:translateY(-8px);box-shadow:0 22px 40px rgba(10,31,68,.14);border-color:var(--cyan)}
+.date{background:linear-gradient(120deg,var(--navy),var(--ieee));color:var(--white);padding:18px 24px;display:flex;align-items:baseline;gap:10px}
+.date strong{font:800 2.2rem var(--head)}
+.date span{color:#BFE8F6}
+.event .body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.event h3{font-size:1.25rem;color:var(--navy)}
+.event p{color:var(--muted);font-size:.98rem;flex:1}
+.meta{font-size:.9rem;color:var(--ieee);font-weight:700}
+.event .btn{background:var(--ieee);color:var(--white);text-align:center}
+.event .btn:hover{background:var(--navy)}
+
+/* Domains */
+#domains{background:var(--deep);color:var(--white)}
+#domains .sec-title{color:var(--white)}
+#domains .sec-sub{color:#9FB3CE}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.dom{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:30px 26px;transition:.25s}
+.dom:hover{background:rgba(0,181,226,.1);border-color:var(--cyan);transform:translateY(-6px)}
+.dom svg{width:44px;height:44px;stroke:var(--cyan);fill:none;stroke-width:1.6;margin-bottom:18px}
+.dom h3{font-size:1.15rem;margin-bottom:8px}
+.dom p{color:#9FB3CE;font-size:.96rem}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+.info{display:grid;gap:18px;align-content:start}
+.info div{display:flex;gap:14px;align-items:flex-start}
+.info .ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--sky);display:grid;place-items:center;color:var(--ieee);font-size:1.2rem}
+.info b{display:block;color:var(--navy)}
+.info a{color:var(--ieee)}
+form{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px;box-shadow:0 14px 34px rgba(10,31,68,.08);display:grid;gap:18px}
+.field{display:grid;gap:6px}
+label{font-weight:700;font-size:.92rem;color:var(--navy)}
+input,select,textarea{font:inherit;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#FAFCFE;color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(0,181,226,.18)}
+.err{color:#C62828;font-size:.85rem;min-height:1em}
+.invalid{border-color:#C62828!important}
+.ok{display:none;background:#E8F7EE;color:#14663A;padding:14px 16px;border-radius:10px;font-weight:700}
+form .btn{background:var(--ieee);color:var(--white)}
+form .btn:hover{background:var(--navy)}
+
+/* Footer */
+footer{background:var(--deep);color:#9FB3CE;text-align:center;padding:30px 0;font-size:.92rem}
+
+/* Modal */
+.overlay{position:fixed;inset:0;background:rgba(6,18,38,.7);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.overlay.open{display:flex}
+.modal{background:var(--white);border-radius:18px;padding:34px;width:min(460px,100%);position:relative;animation:pop .25s ease}
+@keyframes pop{from{transform:scale(.94);opacity:0}to{transform:none;opacity:1}}
+.modal h3{color:var(--navy);margin-bottom:6px;font-size:1.4rem}
+.modal p{color:var(--muted);margin-bottom:20px}
+.x{position:absolute;top:12px;right:16px;background:none;border:0;font-size:1.8rem;cursor:pointer;color:var(--muted)}
+.modal form{padding:0;border:0;box-shadow:none}
+
+@media(max-width:860px){
+  section{padding:72px 0}
+  .menu{display:block}
+  .links{position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;gap:0;background:var(--deep);display:none;padding:10px 0}
+  .links.open{display:flex}
+  .links li{width:100%}
+  .links a{display:block;padding:14px 5%;border:0}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  form{padding:24px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a href="#home" class="brand"><i>MTT</i>IEEE MTT-S MITS-DU</a>
+    <button class="menu" id="menu" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="links" id="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#domains">Domains</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <canvas id="wave" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="tag">IEEE Microwave Theory and Technology Society</span>
+    <h1>Where signals become <span>systems.</span></h1>
+    <p>IEEE MTT-S is the global community advancing microwave, RF and wireless technology. At MITS-DU Gwalior, we turn that field into workshops, projects and research that students can build on.</p>
+    <div class="cta">
+      <a href="#events" class="btn btn-primary">Explore upcoming events</a>
+      <a href="#about" class="btn btn-ghost">About the chapter</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2 class="sec-title">About the chapter</h2>
+      <p>The IEEE MTT-S Student Branch Chapter at Madhav Institute of Technology &amp; Science, Gwalior (Deemed University) brings students together around microwave engineering, RF circuits, antennas and wireless communication.</p>
+      <p>We run hands-on workshops, expert talks and project teams so that classroom theory meets real hardware, simulation tools and industry practice.</p>
+      <p>Every branch is welcome. If you are curious about how wireless systems really work, you belong here.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>Parent society</b>IEEE Microwave Theory and Technology Society</div>
+      <div class="fact"><b>Institute</b>MITS-DU, Gwalior, Madhya Pradesh</div>
+      <div class="fact"><b>Open to</b>Students from all branches and years</div>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <h2 class="sec-title">Upcoming events and workshops</h2>
+    <p class="sec-sub">Seats are limited. Pick a session and register in under a minute.</p>
+    <div class="cards">
+      <article class="event">
+        <div class="date"><strong>24</strong><span>Oct 2026</span></div>
+        <div class="body">
+          <h3>RF Circuit Design with Simulation Tools</h3>
+          <p>A guided lab on designing and simulating a simple RF amplifier and matching network.</p>
+          <div class="meta">Hands-on workshop &middot; MITS Gwalior</div>
+          <button class="btn" data-event="RF Circuit Design with Simulation Tools">Register Now</button>
+        </div>
+      </article>
+      <article class="event">
+        <div class="date"><strong>14</strong><span>Nov 2026</span></div>
+        <div class="body">
+          <h3>Antenna Fundamentals and Measurement</h3>
+          <p>Learn how antennas radiate, how to read patterns, and how designs are measured in practice.</p>
+          <div class="meta">Technical session &middot; MITS Gwalior</div>
+          <button class="btn" data-event="Antenna Fundamentals and Measurement">Register Now</button>
+        </div>
+      </article>
+      <article class="event">
+        <div class="date"><strong>06</strong><span>Dec 2026</span></div>
+        <div class="body">
+          <h3>Intro to Microwave Engineering and Careers</h3>
+          <p>An expert talk on 5G, radar and satellite systems, with advice on research and career paths.</p>
+          <div class="meta">Expert talk &middot; MITS Gwalior</div>
+          <button class="btn" data-event="Intro to Microwave Engineering and Careers">Register Now</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="domains">
+  <div class="wrap">
+    <h2 class="sec-title">Domains and activities</h2>
+    <p class="sec-sub">Four areas where members learn, build and publish.</p>
+    <div class="grid">
+      <div class="dom">
+        <svg viewBox="0 0 48 48"><path d="M2 24c5-14 9-14 11 0s6 14 11 0 6-14 11 0 5 14 9 0"/></svg>
+        <h3>RF and Microwave Engineering</h3>
+        <p>Transmission lines, S-parameters, filters, amplifiers and antennas.</p>
+      </div>
+      <div class="dom">
+        <svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="26" rx="3"/><path d="M16 42h16M24 34v8"/></svg>
+        <h3>Technical Workshops</h3>
+        <p>Lab-style sessions using simulation software and real measurement setups.</p>
+      </div>
+      <div class="dom">
+        <svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="12"/><path d="M30 30l12 12"/></svg>
+        <h3>Research and Projects</h3>
+        <p>Mentored teams working on papers, prototypes and competition entries.</p>
+      </div>
+      <div class="dom">
+        <svg viewBox="0 0 48 48"><path d="M6 38l12-12 8 8 16-20"/><path d="M32 14h10v10"/></svg>
+        <h3>Skill Development</h3>
+        <p>Expert talks, peer learning and career guidance for the wireless industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 class="sec-title">Contact and registration</h2>
+      <p class="sec-sub">Questions about the chapter or an event? Send us a message.</p>
+      <div class="info">
+        <div><span class="ic">&#9993;</span><span><b>Email</b><a href="mailto:ieee.mtts@mitsgwalior.in">ieee.mtts@mitsgwalior.in</a></span></div>
+        <div><span class="ic">&#9906;</span><span><b>Location</b>MITS-DU, Race Course Road, Gwalior, Madhya Pradesh 474005</span></div>
+        <div><span class="ic">&#9719;</span><span><b>Open to</b>All branches, all years</span></div>
+      </div>
+    </div>
+    <form id="contactForm" novalidate>
+      <div class="field"><label for="cn">Full name</label><input id="cn" required autocomplete="name"><span class="err"></span></div>
+      <div class="field"><label for="ce">Email</label><input id="ce" type="email" required autocomplete="email"><span class="err"></span></div>
+      <div class="field"><label for="cm">Message</label><textarea id="cm" rows="4" required></textarea><span class="err"></span></div>
+      <button class="btn" type="submit">Send message</button>
+      <div class="ok" role="status">Thanks! We received your message and will reply by email.</div>
+    </form>
+  </div>
+</section>
+
+<footer>&copy; 2026 IEEE MTT-S Student Branch Chapter, MITS-DU Gwalior</footer>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="modal">
+    <button class="x" id="close" aria-label="Close">&times;</button>
+    <h3 id="mt">Register</h3>
+    <p id="mev"></p>
+    <form id="regForm" novalidate>
+      <div class="field"><label for="rn">Full name</label><input id="rn" required autocomplete="name"><span class="err"></span></div>
+      <div class="field"><label for="re">Email</label><input id="re" type="email" required autocomplete="email"><span class="err"></span></div>
+      <div class="field"><label for="rp">Phone</label><input id="rp" type="tel" inputmode="numeric" required autocomplete="tel"><span class="err"></span></div>
+      <button class="btn" type="submit">Confirm registration</button>
+      <div class="ok" role="status">You're registered! A confirmation will be sent to your email.</div>
+    </form>
+  </div>
+</div>
+
+<script>
+// Mobile menu
+const menu=document.getElementById('menu'),links=document.getElementById('links');
+menu.onclick=()=>{const o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)};
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+
+// Active link on scroll
+const secs=[...document.querySelectorAll('header[id],section[id]')],navA=[...links.querySelectorAll('a')];
+const spy=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting)navA.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));
+}),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>spy.observe(s));
+
+// Validation helpers
+function check(form){
+  let ok=true;
+  form.querySelectorAll('input,textarea').forEach(f=>{
+    const err=f.nextElementSibling;let m='';
+    const v=f.value.trim();
+    if(!v)m='This field is required.';
+    else if(f.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))m='Enter a valid email address.';
+    else if(f.type==='tel'&&!/^[6-9]\d{9}$/.test(v))m='Enter a valid 10-digit phone number.';
+    err.textContent=m;f.classList.toggle('invalid',!!m);if(m)ok=false;
+  });
+  return ok;
+}
+function wire(id){
+  const f=document.getElementById(id);
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(check(f)){f.querySelector('.ok').style.display='block';f.querySelectorAll('input,textarea').forEach(i=>i.disabled=true);f.querySelector('button').disabled=true}
+  });
+}
+wire('contactForm');wire('regForm');
+
+// Modal
+const ov=document.getElementById('overlay');
+function closeM(){ov.classList.remove('open')}
+document.querySelectorAll('[data-event]').forEach(b=>b.onclick=()=>{
+  const f=document.getElementById('regForm');
+  f.reset();f.querySelector('.ok').style.display='none';
+  f.querySelectorAll('input').forEach(i=>{i.disabled=false;i.classList.remove('invalid');i.nextElementSibling.textContent=''});
+  f.querySelector('button').disabled=false;
+  document.getElementById('mev').textContent=b.dataset.event;
+  ov.classList.add('open');document.getElementById('rn').focus();
+});
+document.getElementById('close').onclick=closeM;
+ov.onclick=e=>{if(e.target===ov)closeM()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+
+// Hero waveform
+(function(){
+  const c=document.getElementById('wave'),x=c.getContext('2d');
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w,h,t=0;
+  function size(){const d=devicePixelRatio||1;w=c.clientWidth;h=c.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0)}
+  addEventListener('resize',size);size();
+  const waves=[{a:.09,f:.006,s:.9,c:'rgba(0,181,226,.55)'},{a:.07,f:.009,s:-.6,c:'rgba(0,98,155,.7)'},{a:.05,f:.013,s:.4,c:'rgba(255,255,255,.18)'}];
+  function draw(){
+    x.clearRect(0,0,w,h);
+    waves.forEach((v,i)=>{
+      x.beginPath();x.lineWidth=2;x.strokeStyle=v.c;
+      for(let px=0;px<=w;px+=4){
+        const y=h*(.72+i*.06)+Math.sin(px*v.f+t*v.s)*h*v.a*Math.sin(px*.002+t*.3+i);
+        px?x.lineTo(px,y):x.moveTo(px,y);
+      }
+      x.stroke();
+    });
+    t+=.02;if(!still)requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
